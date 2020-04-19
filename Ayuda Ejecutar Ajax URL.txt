@@ -1,0 +1,9 @@
+$.ajax({
+	url: 'https://localhost/api/EjemploWebDef',
+	success: function(respuesta) {
+		console.log("ok");
+	},
+	error: function() {
+        console.log("No se ha podido obtener la información");
+    }
+});
