@@ -1,0 +1,27 @@
+var $path = "https://localhost:44307/"; // agregar el puerto
+
+var $ServicioRest = new $.RestClient($path + 'api/');
+
+$ServicioRest.add("Correo");// mismo nombre que el api controlador 
+
+var $pathApisLocales = "https://localhost:44379/";// agregar el puerto
+
+var $ServicioRestLocal = new $.RestClient($pathApisLocales + 'api/');
+
+$ServicioRestLocal.add("CorreoLocal");// mismo nombre que el api controlador
+
+
+
+function ajaxObtenerServicioRest() {
+    console.log("mostrar datos ajax");
+
+    //read es para lectura
+    //create es para insertar uno nuevo
+    //Post es para guardar
+    //Update es para actualizar un objeto    
+
+    $ServicioRest.Correo.read({}).done(function (response) {
+        
+        console.log("se hizo correcta la peticion con servicio rest desde jquery");
+    });
+}
